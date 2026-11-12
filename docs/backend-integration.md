@@ -30,7 +30,7 @@
 | 항목 | 값 | 주의 사항 |
 | --- | --- | --- |
 | 내부 주소 | `http://postalk-cardnews.railway.internal:8000` | 같은 Railway 프로젝트·환경에서만 사용 |
-| 상태 확인 | `GET /healthz` | 인증 없음, `{ "status": "ok" }` 반환 |
+| 상태 확인 | `GET /healthz` | 인증 없음. 서비스 이름과 미디어 저장소를 포함한 상태 응답 반환 |
 | 생성 경로 | `POST /cardnews/renders` | `x-cardnews-api-key` 필수 |
 | 인증 키 | `CARDNEWS_INTERNAL_API_KEY` | 백엔드와 서비스의 값이 완전히 같아야 함 |
 

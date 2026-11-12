@@ -36,6 +36,13 @@ class CardNewsRenderTest(unittest.TestCase):
             ],
         }
 
+    def test_healthz_identifies_the_service_and_storage(self):
+        response = self.client.get("/healthz")
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json(), {
+            "status": "ok", "service": "postalk-cardnews", "mediaProvider": "supabase",
+        })
+
     def test_rejects_missing_credentials_and_foreign_storage(self):
         body = self.body()
         self.assertEqual(self.client.post("/cardnews/renders", json=body).status_code, 401)

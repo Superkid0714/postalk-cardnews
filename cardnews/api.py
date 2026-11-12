@@ -82,7 +82,7 @@ def build_style(body: RenderRequest, photos: dict, shop: dict) -> tuple[dict, di
 
 @app.get("/healthz")
 def health():
-    return {"status": "ok"}
+    return {"status": "ok", "service": "postalk-cardnews", "mediaProvider": "supabase"}
 
 
 @app.post("/cardnews/renders")
